@@ -2,7 +2,7 @@
 //  iChatApp.swift
 //  iChat
 //
-//  Created by Tiago Aguiar on 07/10/21.
+//  Created by Joaquim Gomes on 15/03/24.
 //
 
 import SwiftUI
