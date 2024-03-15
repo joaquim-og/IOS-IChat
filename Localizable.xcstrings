@@ -1,0 +1,102 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "generic_email_error_message" : {
+      "comment" : "generic_email_error_message",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invalid E-mail"
+          }
+        }
+      }
+    },
+    "generic_email_placeholder" : {
+      "comment" : "generic_email_placeholder",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Insert your E-mail"
+          }
+        }
+      }
+    },
+    "generic_name_placeholder" : {
+      "comment" : "generic_email_placeholder",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Insert your name"
+          }
+        }
+      }
+    },
+    "generic_password_error_message" : {
+      "comment" : "generic_password_error_message",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invalid Password"
+          }
+        }
+      }
+    },
+    "generic_password_placeholder" : {
+      "comment" : "generic_password_placeholder",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Insert your password"
+          }
+        }
+      }
+    },
+    "sign_in_view_button_enter" : {
+      "comment" : "sign_in_view_button_enter",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter"
+          }
+        }
+      }
+    },
+    "sign_in_view_button_sign_up" : {
+      "comment" : "sign_in_view_button_sign_up",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't have an account? Tap here"
+          }
+        }
+      }
+    },
+    "sign_up_view_button_enter" : {
+      "comment" : "sign_up_view_button_enter",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Register"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
