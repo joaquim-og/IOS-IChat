@@ -12,24 +12,30 @@ struct SignInView: View {
     @StateObject var viewModel = SignInViewModel()
     
     var body: some View {
-        VStack {
-            IChatLogo()
-            emailField
-            passwordField
-            signInButton
-            Divider()
-                .padding()
-            signUpButton
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(.horizontal, 22)
-        .background(
-            Color.init(
-                red: 240 / 255,
-                green: 231 / 255,
-                blue: 210 / 255
+        NavigationView{
+            VStack {
+                IChatLogo()
+                emailField
+                passwordField
+                signInButton
+                Divider()
+                    .padding()
+                signUpButton
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(.horizontal, 22)
+            .background(
+                Color.init(
+                    red: 240 / 255,
+                    green: 231 / 255,
+                    blue: 210 / 255
+                )
             )
-        )
+        }
+        
+        if case SignInUiState.error(let error) = viewModel.uiState {
+            IChatErrorAlert(error: error)
+        }
     }
 }
 
@@ -52,7 +58,7 @@ extension SignInView {
             placeHolder: NSLocalizedString("generic_password_placeholder", comment: ""),
             error: NSLocalizedString("generic_password_error_message", comment: "")
         )
-    
+        
         .padding(.bottom, 20)
     }
 }
@@ -64,16 +70,16 @@ extension SignInView {
                 viewModel.signIn()
             },
             buttonText: NSLocalizedString("sign_in_view_button_enter", comment: ""),
-            showProgress: false,
-            disabled: false)
+            showProgress: self.viewModel.uiState == SignInUiState.loading,
+            disabled: self.viewModel.uiState == SignInUiState.loading
+        )
     }
 }
 
 extension SignInView {
     var signUpButton: some View {
-        Button(
-            action: {},
-            label: {
+        NavigationLink(
+            destination: SignUpView(), label: {
                 Text(
                     NSLocalizedString(
                         "sign_in_view_button_sign_up",

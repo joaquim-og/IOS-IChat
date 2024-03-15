@@ -28,6 +28,10 @@ struct SignUpView: View {
                 blue: 210 / 255
             )
         )
+        
+        if case SignUpUiState.error(let error) = viewModel.uiState {
+            IChatErrorAlert(error: error)
+        }
     }
 }
 
@@ -47,7 +51,9 @@ extension SignUpView {
         IChatTextFieldView(
             text: $viewModel.email,
             placeHolder: NSLocalizedString("generic_email_placeholder", comment: ""),
-            error: NSLocalizedString("generic_email_error_message", comment: "")
+            error: NSLocalizedString("generic_email_error_message", comment: ""),
+            failure: !viewModel.email.isEmail(),
+            keyboard: .emailAddress
         )
         .padding(.bottom, 15)
         .padding(.top, 20)
@@ -61,7 +67,7 @@ extension SignUpView {
             placeHolder: NSLocalizedString("generic_password_placeholder", comment: ""),
             error: NSLocalizedString("generic_password_error_message", comment: "")
         )
-    
+        
         .padding(.bottom, 20)
     }
 }
@@ -73,8 +79,9 @@ extension SignUpView {
                 viewModel.signUp()
             },
             buttonText: NSLocalizedString("sign_up_view_button_enter", comment: ""),
-            showProgress: false,
-            disabled: false)
+            showProgress: self.viewModel.uiState == SignUpUiState.loading,
+            disabled: self.viewModel.uiState == SignUpUiState.loading
+        )
     }
 }
 

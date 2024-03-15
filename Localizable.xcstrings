@@ -1,6 +1,33 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
+    "generic_app_name" : {
+      "comment" : "generic_app_name",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ichat"
+          }
+        }
+      }
+    },
+    "generic_confirmation_text" : {
+      "comment" : "generic_confirmation_text",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
+          }
+        }
+      }
+    },
     "generic_email_error_message" : {
       "comment" : "generic_email_error_message",
       "extractionState" : "manual",
@@ -81,6 +108,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Don't have an account? Tap here"
+          }
+        }
+      }
+    },
+    "sign_in_view_title" : {
+      "comment" : "sign_in_view_button_enter",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SignIn"
           }
         }
       }
