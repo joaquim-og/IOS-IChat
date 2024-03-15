@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseStorage
 
 class SignUpViewModel: ObservableObject {
     
@@ -15,12 +16,15 @@ class SignUpViewModel: ObservableObject {
     @Published var email = ""
     @Published var name = ""
     @Published var password = ""
+    @Published var image = UIImage()
     
     func signUp() {
         setLoadingState()
-        debugPrint("Xablau email -> \(email)")
-        debugPrint("Xablau name -> \(name)")
-        debugPrint("Xablau password -> \(password)")
+        
+        if (image.size.width <= 0) {
+            setErrorState(error: NSLocalizedString("sign_up_error_no_photo", comment: ""))
+            return
+        }
         
         Auth.auth().createUser(
             withEmail: email,
@@ -28,12 +32,40 @@ class SignUpViewModel: ObservableObject {
             completion: { result, error in
                 guard let user = result?.user, error == nil else {
                     self.setErrorState(error: error?.localizedDescription ?? "")
-                    debugPrint("Xablau erro do user -> \(error)")
                     return
                 }
                 
-                self.setSuccessState()
-                debugPrint("Xablau user criado -> \(user.uid)")
+                self.uploadUserPhoto()
+            }
+        )
+    }
+    
+    private func uploadUserPhoto() {
+        
+        let fileName = UUID().uuidString
+        
+        let ref = Storage.storage().reference(withPath: "/images/\(fileName).jpg")
+        
+        guard let data = image.jpegData(compressionQuality: 0.2) else { return }
+        
+        let newMetadata = StorageMetadata()
+        newMetadata.contentType = "image/jpeg"
+        
+        ref.putData(
+            data,
+            metadata: newMetadata,
+            completion: { metadata, error in
+                if (error != nil) {
+                    self.setErrorState(error: error?.localizedDescription ?? "")
+                    return
+                }
+                ref.downloadURL { url, publicUrlError in
+                    if (publicUrlError != nil) {
+                        self.setErrorState(error: error?.localizedDescription ?? "")
+                        return
+                    }
+                    self.setSuccessState()
+                }
             }
         )
     }

@@ -10,10 +10,11 @@ import SwiftUI
 struct SignUpView: View {
     
     @StateObject var viewModel = SignUpViewModel()
+    @State var isShowPhotoLibrary = false
     
     var body: some View {
         VStack {
-            IChatLogo()
+            addUserPhoto
             nameField
             emailField
             passwordField
@@ -32,6 +33,42 @@ struct SignUpView: View {
         if case SignUpUiState.error(let error) = viewModel.uiState {
             IChatErrorAlert(error: error)
         }
+    }
+}
+
+extension SignUpView {
+    var addUserPhoto: some View {
+        Button (
+            action: {
+                isShowPhotoLibrary = true
+            },
+            label: {
+                if (viewModel.image.size.width > 0) {
+                    Image(uiImage: viewModel.image)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 130, height: 130)
+                        .clipShape(Circle())
+                } else {
+                    Text(NSLocalizedString("sign_up_view_button_photo_placeholder", comment: "")
+                    )
+                    .frame(width: 130, height: 130)
+                    .padding()
+                    .background(Color("GreenColor"))
+                    .foregroundColor(Color.white)
+                    .cornerRadius(100.0)
+                }
+            }
+        )
+        .padding(.bottom, 32)
+        .sheet(
+            isPresented: $isShowPhotoLibrary,
+            content: {
+                ImagePickerView(
+                    selectedImage: $viewModel.image
+                )
+            }
+        )
     }
 }
 

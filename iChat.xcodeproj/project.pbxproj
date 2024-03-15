@@ -13,6 +13,7 @@
 		34CAE8072BA4D65F006D57BF /* SignUpUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CAE8062BA4D65F006D57BF /* SignUpUiState.swift */; };
 		34CAE8092BA4D750006D57BF /* IChatErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CAE8082BA4D750006D57BF /* IChatErrorAlert.swift */; };
 		34CAE80C2BA4D8FA006D57BF /* SignInUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CAE80B2BA4D8FA006D57BF /* SignInUiState.swift */; };
+		34CAE80E2BA4DD81006D57BF /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CAE80D2BA4DD81006D57BF /* ImagePickerView.swift */; };
 		34DA07302BA484C700FC45C2 /* IChatLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA072F2BA484C700FC45C2 /* IChatLogo.swift */; };
 		34DA07322BA4859C00FC45C2 /* IChatTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA07312BA4859C00FC45C2 /* IChatTextFieldView.swift */; };
 		34DA07342BA4876400FC45C2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 34DA07332BA4876400FC45C2 /* Localizable.xcstrings */; };
@@ -33,6 +34,7 @@
 		34CAE8062BA4D65F006D57BF /* SignUpUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUiState.swift; sourceTree = "<group>"; };
 		34CAE8082BA4D750006D57BF /* IChatErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IChatErrorAlert.swift; sourceTree = "<group>"; };
 		34CAE80B2BA4D8FA006D57BF /* SignInUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUiState.swift; sourceTree = "<group>"; };
+		34CAE80D2BA4DD81006D57BF /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		34DA072F2BA484C700FC45C2 /* IChatLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IChatLogo.swift; sourceTree = "<group>"; };
 		34DA07312BA4859C00FC45C2 /* IChatTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IChatTextFieldView.swift; sourceTree = "<group>"; };
 		34DA07332BA4876400FC45C2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				34DA07352BA489AF00FC45C2 /* IChatSecureEditTextView.swift */,
 				34DA07372BA48B4E00FC45C2 /* IChatLoadingButtonView.swift */,
 				34CAE8082BA4D750006D57BF /* IChatErrorAlert.swift */,
+				34CAE80D2BA4DD81006D57BF /* ImagePickerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				34CAE8072BA4D65F006D57BF /* SignUpUiState.swift in Sources */,
 				34DA07322BA4859C00FC45C2 /* IChatTextFieldView.swift in Sources */,
 				34CAE8042BA4D5CC006D57BF /* StringExtensions.swift in Sources */,
+				34CAE80E2BA4DD81006D57BF /* ImagePickerView.swift in Sources */,
 				34DA07362BA489AF00FC45C2 /* IChatSecureEditTextView.swift in Sources */,
 				34DA07442BA4981500FC45C2 /* SignUpViewModel.swift in Sources */,
 				34CAE80C2BA4D8FA006D57BF /* SignInUiState.swift in Sources */,

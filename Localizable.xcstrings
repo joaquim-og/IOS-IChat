@@ -124,6 +124,17 @@
         }
       }
     },
+    "sign_up_error_no_photo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please select a photo"
+          }
+        }
+      }
+    },
     "sign_up_view_button_enter" : {
       "comment" : "sign_up_view_button_enter",
       "extractionState" : "manual",
@@ -132,6 +143,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Register"
+          }
+        }
+      }
+    },
+    "sign_up_view_button_photo_placeholder" : {
+      "comment" : "sign_up_view_button_photo_placeholder",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Photo"
           }
         }
       }
