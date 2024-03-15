@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseAuth
 import FirebaseStorage
+import FirebaseFirestore
 
 class SignUpViewModel: ObservableObject {
     
@@ -61,13 +62,36 @@ class SignUpViewModel: ObservableObject {
                 }
                 ref.downloadURL { url, publicUrlError in
                     if (publicUrlError != nil) {
-                        self.setErrorState(error: error?.localizedDescription ?? "")
+                        self.setErrorState(error: publicUrlError?.localizedDescription ?? "")
                         return
                     }
-                    self.setSuccessState()
+                    guard let url = url else {
+                        self.setErrorState(error: publicUrlError?.localizedDescription ?? "")
+                        return
+                    }
+                    self.createUser(photoUrl: url)
                 }
             }
         )
+    }
+    
+    private func createUser(photoUrl: URL) {
+        Firestore.firestore()
+            .collection(NSLocalizedString("firedtore_db_references_user", comment: ""))
+            .document()
+            .setData([
+                "name": name,
+                "uuid": Auth.auth().currentUser!.uid,
+                "profileUrl": photoUrl.absoluteString
+            ]) { error in
+                if (error != nil) {
+                    self.setErrorState(error: error?.localizedDescription ?? "")
+                    return
+                } else {
+                    self.setSuccessState()
+                    //navigate to home
+                }
+            }
     }
     
     private func setLoadingState() {

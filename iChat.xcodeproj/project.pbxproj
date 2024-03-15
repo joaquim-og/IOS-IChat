@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1729F04674CAD8195148C85C /* Pods_iChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3987BDDF3963D3142613E2A4 /* Pods_iChat.framework */; };
-		34CAE8012BA4D284006D57BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34CAE8002BA4D284006D57BF /* GoogleService-Info.plist */; };
 		34CAE8042BA4D5CC006D57BF /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CAE8032BA4D5CC006D57BF /* StringExtensions.swift */; };
 		34CAE8072BA4D65F006D57BF /* SignUpUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CAE8062BA4D65F006D57BF /* SignUpUiState.swift */; };
 		34CAE8092BA4D750006D57BF /* IChatErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CAE8082BA4D750006D57BF /* IChatErrorAlert.swift */; };
 		34CAE80C2BA4D8FA006D57BF /* SignInUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CAE80B2BA4D8FA006D57BF /* SignInUiState.swift */; };
 		34CAE80E2BA4DD81006D57BF /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CAE80D2BA4DD81006D57BF /* ImagePickerView.swift */; };
+		34CAE8102BA4E79E006D57BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34CAE80F2BA4E79E006D57BF /* GoogleService-Info.plist */; };
 		34DA07302BA484C700FC45C2 /* IChatLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA072F2BA484C700FC45C2 /* IChatLogo.swift */; };
 		34DA07322BA4859C00FC45C2 /* IChatTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA07312BA4859C00FC45C2 /* IChatTextFieldView.swift */; };
 		34DA07342BA4876400FC45C2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 34DA07332BA4876400FC45C2 /* Localizable.xcstrings */; };
@@ -29,12 +29,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		34CAE8002BA4D284006D57BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		34CAE8032BA4D5CC006D57BF /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		34CAE8062BA4D65F006D57BF /* SignUpUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUiState.swift; sourceTree = "<group>"; };
 		34CAE8082BA4D750006D57BF /* IChatErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IChatErrorAlert.swift; sourceTree = "<group>"; };
 		34CAE80B2BA4D8FA006D57BF /* SignInUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUiState.swift; sourceTree = "<group>"; };
 		34CAE80D2BA4DD81006D57BF /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		34CAE80F2BA4E79E006D57BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "iChat/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		34DA072F2BA484C700FC45C2 /* IChatLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IChatLogo.swift; sourceTree = "<group>"; };
 		34DA07312BA4859C00FC45C2 /* IChatTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IChatTextFieldView.swift; sourceTree = "<group>"; };
 		34DA07332BA4876400FC45C2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 		9C0B9A33270F691D00DF2B5F = {
 			isa = PBXGroup;
 			children = (
-				34CAE8002BA4D284006D57BF /* GoogleService-Info.plist */,
+				34CAE80F2BA4E79E006D57BF /* GoogleService-Info.plist */,
 				34DA07332BA4876400FC45C2 /* Localizable.xcstrings */,
 				9C0B9A3E270F691D00DF2B5F /* iChat */,
 				9C0B9A3D270F691D00DF2B5F /* Products */,
@@ -282,7 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C0B9A47270F692100DF2B5F /* Preview Assets.xcassets in Resources */,
-				34CAE8012BA4D284006D57BF /* GoogleService-Info.plist in Resources */,
+				34CAE8102BA4E79E006D57BF /* GoogleService-Info.plist in Resources */,
 				9C0B9A44270F692100DF2B5F /* Assets.xcassets in Resources */,
 				34DA07342BA4876400FC45C2 /* Localizable.xcstrings in Resources */,
 			);

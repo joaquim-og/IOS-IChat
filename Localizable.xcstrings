@@ -4,6 +4,18 @@
     "" : {
 
     },
+    "firedtore_db_references_user" : {
+      "comment" : "firedtore_db_references_user",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "users"
+          }
+        }
+      }
+    },
     "generic_app_name" : {
       "comment" : "generic_app_name",
       "extractionState" : "manual",
