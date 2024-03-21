@@ -9,8 +9,16 @@ import Foundation
 import FirebaseAuth
 import FirebaseStorage
 import FirebaseFirestore
+import Combine
 
 class SignUpViewModel: ObservableObject {
+    
+    private let genericServerErrorMessage = NSLocalizedString("generic_server_error", comment: "")
+    
+    private let signUpInteractor = SignUpInteractor()
+    private var requestSignUpCancellable: AnyCancellable?
+    private var requestUploadPhotoCancellable: AnyCancellable?
+    private var requestCreateuserCancellable: AnyCancellable?
     
     @Published var uiState: SignUpUiState = .none
     
@@ -18,6 +26,12 @@ class SignUpViewModel: ObservableObject {
     @Published var name = ""
     @Published var password = ""
     @Published var image = UIImage()
+    
+    deinit {
+        requestSignUpCancellable?.cancel()
+        requestUploadPhotoCancellable?.cancel()
+        requestCreateuserCancellable?.cancel()
+    }
     
     func signUp() {
         setLoadingState()
@@ -27,71 +41,70 @@ class SignUpViewModel: ObservableObject {
             return
         }
         
-        Auth.auth().createUser(
-            withEmail: email,
-            password: password,
-            completion: { result, error in
-                guard let user = result?.user, error == nil else {
-                    self.setErrorState(error: error?.localizedDescription ?? "")
-                    return
-                }
-                
-                self.uploadUserPhoto()
-            }
+        let request = SignUpRequest(
+            email: email, 
+            password: password
         )
+        
+        requestSignUpCancellable = signUpInteractor.signUp(
+            request: request
+        )
+        .receive(on: DispatchQueue.main)
+        .sink { onComplete in
+            switch (onComplete) {
+            case .failure(let appError):
+                self.setErrorState(error: appError.message)
+                break
+            case .finished:
+                break
+            }
+        } receiveValue: { _ in
+            self.uploadUserPhoto()
+        }
     }
     
     private func uploadUserPhoto() {
         
-        let fileName = UUID().uuidString
-        
-        let ref = Storage.storage().reference(withPath: "/images/\(fileName).jpg")
-        
         guard let data = image.jpegData(compressionQuality: 0.2) else { return }
         
-        let newMetadata = StorageMetadata()
-        newMetadata.contentType = "image/jpeg"
         
-        ref.putData(
-            data,
-            metadata: newMetadata,
-            completion: { metadata, error in
-                if (error != nil) {
-                    self.setErrorState(error: error?.localizedDescription ?? "")
-                    return
-                }
-                ref.downloadURL { url, publicUrlError in
-                    if (publicUrlError != nil) {
-                        self.setErrorState(error: publicUrlError?.localizedDescription ?? "")
-                        return
-                    }
-                    guard let url = url else {
-                        self.setErrorState(error: publicUrlError?.localizedDescription ?? "")
-                        return
-                    }
-                    self.createUser(photoUrl: url)
-                }
-            }
+        requestUploadPhotoCancellable = signUpInteractor.createUserPhoto(
+            userPhoto: data
         )
+        .receive(on: DispatchQueue.main)
+        .sink { onComplete in
+            switch (onComplete) {
+            case .failure(let appError):
+                self.setErrorState(error: appError.message)
+                break
+            case .finished:
+                break
+            }
+        } receiveValue: { url in
+            self.createUser(photoUrl: url)
+        }
     }
     
-    private func createUser(photoUrl: URL) {
-        Firestore.firestore()
-            .collection(NSLocalizedString("firedtore_db_references_user", comment: ""))
-            .document()
-            .setData([
-                "name": name,
-                "uuid": Auth.auth().currentUser!.uid,
-                "profileUrl": photoUrl.absoluteString
-            ]) { error in
-                if (error != nil) {
-                    self.setErrorState(error: error?.localizedDescription ?? "")
-                    return
-                } else {
-                    self.setSuccessState()
-                    //navigate to home
-                }
+    private func createUser(
+        photoUrl: URL
+    ) {
+        
+        requestCreateuserCancellable = signUpInteractor.createUser(
+            userName: name,
+            photoUrl: photoUrl
+        )
+        .receive(on: DispatchQueue.main)
+        .sink { onComplete in
+            switch (onComplete) {
+            case .failure(let appError):
+                self.setErrorState(error: appError.message)
+                break
+            case .finished:
+                break
             }
+        } receiveValue: { url in
+            self.setSuccessState()
+        }
     }
     
     private func setLoadingState() {
