@@ -6,9 +6,7 @@
 //
 
 import Foundation
-import FirebaseAuth
-import FirebaseStorage
-import FirebaseFirestore
+import SwiftUI
 import Combine
 
 class SignUpViewModel: ObservableObject {

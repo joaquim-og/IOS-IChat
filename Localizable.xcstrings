@@ -115,6 +115,30 @@
     "Habit" : {
 
     },
+    "messages_view_toolbar_contacts" : {
+      "comment" : "messages_view_toolbar_contacts",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contacts"
+          }
+        }
+      }
+    },
+    "messages_view_toolbar_logout" : {
+      "comment" : "messages_view_tollbar_logout",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logout"
+          }
+        }
+      }
+    },
     "ok" : {
 
     },
@@ -189,7 +213,7 @@
         }
       }
     },
-    "Xablau mensagens logout" : {
+    "Xablau marcação" : {
 
     }
   },

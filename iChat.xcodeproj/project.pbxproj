@@ -20,6 +20,14 @@
 		340D90E42BADABF2002ABF97 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D90E32BADABF2002ABF97 /* MessagesView.swift */; };
 		340D90E62BADAC38002ABF97 /* MessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D90E52BADAC38002ABF97 /* MessagesViewModel.swift */; };
 		340D90E92BADAC6D002ABF97 /* MessagesUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D90E82BADAC6D002ABF97 /* MessagesUiState.swift */; };
+		340D90EC2BADD1D1002ABF97 /* MessagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D90EB2BADD1D1002ABF97 /* MessagesInteractor.swift */; };
+		340D90EE2BADD204002ABF97 /* MessagesRemoteDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D90ED2BADD204002ABF97 /* MessagesRemoteDatasource.swift */; };
+		340D90F52BADD2DF002ABF97 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D90F42BADD2DF002ABF97 /* ContactsView.swift */; };
+		340D90F72BADD35D002ABF97 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D90F62BADD35D002ABF97 /* ContactsViewModel.swift */; };
+		340D90F92BADD3A6002ABF97 /* ContactsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D90F82BADD3A6002ABF97 /* ContactsInteractor.swift */; };
+		340D90FB2BADD3EA002ABF97 /* ContactsRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D90FA2BADD3EA002ABF97 /* ContactsRemoteDataSource.swift */; };
+		3482FF602BADD5EA002143C7 /* ContactsUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3482FF5F2BADD5EA002143C7 /* ContactsUiState.swift */; };
+		3482FF622BADD6A6002143C7 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3482FF612BADD6A6002143C7 /* Contact.swift */; };
 		34CAE8042BA4D5CC006D57BF /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CAE8032BA4D5CC006D57BF /* StringExtensions.swift */; };
 		34CAE8072BA4D65F006D57BF /* SignUpUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CAE8062BA4D65F006D57BF /* SignUpUiState.swift */; };
 		34CAE8092BA4D750006D57BF /* IChatErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CAE8082BA4D750006D57BF /* IChatErrorAlert.swift */; };
@@ -34,6 +42,7 @@
 		34DA073D2BA492B200FC45C2 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA073C2BA492B200FC45C2 /* SignInViewModel.swift */; };
 		34DA07412BA497BC00FC45C2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA07402BA497BC00FC45C2 /* SignUpView.swift */; };
 		34DA07442BA4981500FC45C2 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA07432BA4981500FC45C2 /* SignUpViewModel.swift */; };
+		34DA980F2BADDD5800FD993D /* ContactRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA980E2BADDD5800FD993D /* ContactRow.swift */; };
 		9C0B9A40270F691D00DF2B5F /* iChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B9A3F270F691D00DF2B5F /* iChatApp.swift */; };
 		9C0B9A42270F691D00DF2B5F /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B9A41270F691D00DF2B5F /* SignInView.swift */; };
 		9C0B9A44270F692100DF2B5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C0B9A43270F692100DF2B5F /* Assets.xcassets */; };
@@ -53,6 +62,14 @@
 		340D90E32BADABF2002ABF97 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		340D90E52BADAC38002ABF97 /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
 		340D90E82BADAC6D002ABF97 /* MessagesUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesUiState.swift; sourceTree = "<group>"; };
+		340D90EB2BADD1D1002ABF97 /* MessagesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesInteractor.swift; sourceTree = "<group>"; };
+		340D90ED2BADD204002ABF97 /* MessagesRemoteDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesRemoteDatasource.swift; sourceTree = "<group>"; };
+		340D90F42BADD2DF002ABF97 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
+		340D90F62BADD35D002ABF97 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		340D90F82BADD3A6002ABF97 /* ContactsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsInteractor.swift; sourceTree = "<group>"; };
+		340D90FA2BADD3EA002ABF97 /* ContactsRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsRemoteDataSource.swift; sourceTree = "<group>"; };
+		3482FF5F2BADD5EA002143C7 /* ContactsUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsUiState.swift; sourceTree = "<group>"; };
+		3482FF612BADD6A6002143C7 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		34CAE8032BA4D5CC006D57BF /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		34CAE8062BA4D65F006D57BF /* SignUpUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUiState.swift; sourceTree = "<group>"; };
 		34CAE8082BA4D750006D57BF /* IChatErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IChatErrorAlert.swift; sourceTree = "<group>"; };
@@ -67,6 +84,7 @@
 		34DA073C2BA492B200FC45C2 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		34DA07402BA497BC00FC45C2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		34DA07432BA4981500FC45C2 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		34DA980E2BADDD5800FD993D /* ContactRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRow.swift; sourceTree = "<group>"; };
 		3987BDDF3963D3142613E2A4 /* Pods_iChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EC9132D90F7B0624BC06ABC /* Pods-iChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iChat.debug.xcconfig"; path = "Target Support Files/Pods-iChat/Pods-iChat.debug.xcconfig"; sourceTree = "<group>"; };
 		9C0B9A3C270F691D00DF2B5F /* iChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +120,8 @@
 			children = (
 				340D90C42BACB961002ABF97 /* SignInRemoteDataSource.swift */,
 				340D90C92BACBA37002ABF97 /* SignUpRemoteDataSource.swift */,
+				340D90ED2BADD204002ABF97 /* MessagesRemoteDatasource.swift */,
+				340D90FA2BADD3EA002ABF97 /* ContactsRemoteDataSource.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -159,6 +179,7 @@
 		340D90E02BACD11C002ABF97 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
+				340D90EA2BADD1B5002ABF97 /* Interactor */,
 				340D90E72BADAC51002ABF97 /* Model */,
 				340D90E22BACD127002ABF97 /* ViewModel */,
 				340D90E12BACD123002ABF97 /* View */,
@@ -188,6 +209,60 @@
 				340D90E82BADAC6D002ABF97 /* MessagesUiState.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		340D90EA2BADD1B5002ABF97 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				340D90EB2BADD1D1002ABF97 /* MessagesInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		340D90EF2BADD290002ABF97 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				340D90F32BADD2C1002ABF97 /* Interactor */,
+				340D90F22BADD2BA002ABF97 /* Model */,
+				340D90F12BADD2B4002ABF97 /* ViewModel */,
+				340D90F02BADD2A2002ABF97 /* View */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		340D90F02BADD2A2002ABF97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				340D90F42BADD2DF002ABF97 /* ContactsView.swift */,
+				34DA980E2BADDD5800FD993D /* ContactRow.swift */,
+			);
+			name = View;
+			path = "../New Group/New Group";
+			sourceTree = "<group>";
+		};
+		340D90F12BADD2B4002ABF97 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				340D90F62BADD35D002ABF97 /* ContactsViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		340D90F22BADD2BA002ABF97 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3482FF5F2BADD5EA002143C7 /* ContactsUiState.swift */,
+				3482FF612BADD6A6002143C7 /* Contact.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		340D90F32BADD2C1002ABF97 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				340D90F82BADD3A6002ABF97 /* ContactsInteractor.swift */,
+			);
+			name = Interactor;
 			sourceTree = "<group>";
 		};
 		34CAE8022BA4D5BC006D57BF /* Extensions */ = {
@@ -316,6 +391,7 @@
 		9C0B9A3E270F691D00DF2B5F /* iChat */ = {
 			isa = PBXGroup;
 			children = (
+				340D90EF2BADD290002ABF97 /* Contacts */,
 				340D90E02BACD11C002ABF97 /* Messages */,
 				340D90D72BACCCC4002ABF97 /* SplashView */,
 				34DA073E2BA4979600FC45C2 /* SignUp */,
@@ -470,6 +546,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C0B9A42270F691D00DF2B5F /* SignInView.swift in Sources */,
+				340D90F72BADD35D002ABF97 /* ContactsViewModel.swift in Sources */,
+				3482FF622BADD6A6002143C7 /* Contact.swift in Sources */,
 				34CAE8072BA4D65F006D57BF /* SignUpUiState.swift in Sources */,
 				340D90D62BACCBF5002ABF97 /* ContentView.swift in Sources */,
 				340D90E92BADAC6D002ABF97 /* MessagesUiState.swift in Sources */,
@@ -480,15 +558,22 @@
 				34DA07362BA489AF00FC45C2 /* IChatSecureEditTextView.swift in Sources */,
 				340D90E42BADABF2002ABF97 /* MessagesView.swift in Sources */,
 				340D90C52BACB961002ABF97 /* SignInRemoteDataSource.swift in Sources */,
+				340D90F52BADD2DF002ABF97 /* ContactsView.swift in Sources */,
 				34DA07442BA4981500FC45C2 /* SignUpViewModel.swift in Sources */,
 				34CAE80C2BA4D8FA006D57BF /* SignInUiState.swift in Sources */,
+				340D90FB2BADD3EA002ABF97 /* ContactsRemoteDataSource.swift in Sources */,
 				340D90CF2BACBAAE002ABF97 /* SignUpRequest.swift in Sources */,
 				9C0B9A40270F691D00DF2B5F /* iChatApp.swift in Sources */,
 				34CAE8092BA4D750006D57BF /* IChatErrorAlert.swift in Sources */,
 				340D90DE2BACCE1D002ABF97 /* ContentViewUiState.swift in Sources */,
 				340D90D42BACC789002ABF97 /* SignInRequest.swift in Sources */,
+				340D90EC2BADD1D1002ABF97 /* MessagesInteractor.swift in Sources */,
 				340D90E62BADAC38002ABF97 /* MessagesViewModel.swift in Sources */,
+				340D90EE2BADD204002ABF97 /* MessagesRemoteDatasource.swift in Sources */,
 				340D90DB2BACCD45002ABF97 /* ContentViewViewModel.swift in Sources */,
+				34DA980F2BADDD5800FD993D /* ContactRow.swift in Sources */,
+				3482FF602BADD5EA002143C7 /* ContactsUiState.swift in Sources */,
+				340D90F92BADD3A6002ABF97 /* ContactsInteractor.swift in Sources */,
 				340D90CA2BACBA37002ABF97 /* SignUpRemoteDataSource.swift in Sources */,
 				34DA07412BA497BC00FC45C2 /* SignUpView.swift in Sources */,
 				34DA07302BA484C700FC45C2 /* IChatLogo.swift in Sources */,
@@ -634,7 +719,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -665,7 +750,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

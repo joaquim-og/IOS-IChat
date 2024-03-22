@@ -12,13 +12,13 @@ import Combine
 class MessagesViewModel:  ObservableObject {
     
     
-    private let signInRemoteDataSource = SignInRemoteDataSource.signInRemoteDataSourceShared
-    private var requestUserLoggedCancellable: AnyCancellable?
+    private let messagesInteractor = MessagesInteractor()
+    private var requestMessagesCancellable: AnyCancellable?
 
     @Published var uiState: MessagesUiState = .none
     
     deinit {
-        requestUserLoggedCancellable?.cancel()
+        requestMessagesCancellable?.cancel()
     }
     
     func doLogout() {
