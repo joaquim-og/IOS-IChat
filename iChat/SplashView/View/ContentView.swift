@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct SplashView: View {
+struct ContentView: View {
     
-    @StateObject var viewModel = SplashViewModel()
+    @StateObject var viewModel = ContentViewViewModel()
     
     var body: some View {
-        NavigationView{
+        ZStack{
             switch viewModel.uiState {
             case .loading:
                 loadingView()
@@ -31,7 +31,7 @@ struct SplashView: View {
     }
 }
 
-extension SplashView {
+extension ContentView {
     func loadingView(error: String? = nil) -> some View {
         ZStack {
             IChatLogo()
@@ -51,7 +51,7 @@ extension SplashView {
 struct SplashViewPreviews: PreviewProvider {
     static var previews: some View {
         ForEach(ColorScheme.allCases, id: \.self) { colorScheme in
-            SplashView()
+            ContentView()
                 .preferredColorScheme(colorScheme)
         }
     }

@@ -9,13 +9,13 @@ import Foundation
 import FirebaseAuth
 import Combine
 
-class SplashViewModel:  ObservableObject {
+class ContentViewViewModel:  ObservableObject {
     
     
     private let signInRemoteDataSource = SignInRemoteDataSource.signInRemoteDataSourceShared
     private var requestUserLoggedCancellable: AnyCancellable?
 
-    @Published var uiState: SplashUiState = .none
+    @Published var uiState: ContentViewUiState = .none
     
     deinit {
         requestUserLoggedCancellable?.cancel()
@@ -49,7 +49,7 @@ class SplashViewModel:  ObservableObject {
         }
     }
     
-    private func setUserStateState(userState: SplashUiState) {
+    private func setUserStateState(userState: ContentViewUiState) {
         DispatchQueue.main.async {
             self.uiState = userState
         }

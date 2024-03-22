@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum SplashUiState: Equatable {
+enum ContentViewUiState: Equatable {
     case none
     case loading
     case logged
