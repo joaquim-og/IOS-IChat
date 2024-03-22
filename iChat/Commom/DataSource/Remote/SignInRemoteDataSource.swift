@@ -35,4 +35,12 @@ class SignInRemoteDataSource {
             )
         }
     }
+    
+    func getCurrentUser() -> Future<User?, AppError> {
+        return Future { promise in
+            let currentuser = Auth.auth().currentUser
+            
+            promise(.success(currentuser))
+        }
+    }
 }

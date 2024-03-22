@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>XXXXXXXXXXXXXX</string>
+	<string>AIzaSyCPppNukxU4dWh_7Nw_8uW1QsNn00eGfVg</string>
 	<key>GCM_SENDER_ID</key>
-	<string>XXXXXXXX</string>
+	<string>884537525121</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
@@ -15,16 +15,16 @@
 	<key>STORAGE_BUCKET</key>
 	<string>tutorial-ios-ichat.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>XXXXXXXXXX</string>
+	<string>1:884537525121:ios:6364f0ae048c2f52ff5e80</string>
 </dict>
 </plist>

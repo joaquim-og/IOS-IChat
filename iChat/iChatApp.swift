@@ -25,7 +25,7 @@ struct iChatApp: App {
     
     var body: some Scene {
         WindowGroup {
-            SignInView()
+            SplashView()
         }
     }
 }

@@ -112,6 +112,12 @@
         }
       }
     },
+    "Habit" : {
+
+    },
+    "ok" : {
+
+    },
     "sign_in_view_button_enter" : {
       "comment" : "sign_in_view_button_enter",
       "extractionState" : "manual",
@@ -182,6 +188,9 @@
           }
         }
       }
+    },
+    "Xablau mensagens logout" : {
+
     }
   },
   "version" : "1.0"
