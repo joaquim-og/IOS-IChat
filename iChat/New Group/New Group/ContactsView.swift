@@ -14,12 +14,24 @@ struct ContactsView: View {
     
     var body: some View {
         VStack{
+            
+            if (viewModel.uiState == ContactsUiState.loading){
+                ProgressView()
+            }
+            
             List(viewModel.contacts, id: \.self) { contact in
-                ContactRow(contact: contact)
+                NavigationLink {
+                    ChatView(userName: contact.name)
+                } label: {
+                    ContactRow(contact: contact)
+                }
             }
         }.onAppear{
             viewModel.getContacts()
-        }
+        }.navigationTitle(NSLocalizedString(
+            "messages_view_toolbar_contacts",
+            comment: ""
+        ))
     }
 }
 

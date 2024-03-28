@@ -113,7 +113,38 @@
       }
     },
     "Habit" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Habit"
+          }
+        }
+      }
+    },
+    "message_view_user_message" : {
+      "comment" : "message_view_user_message",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Write your message"
+          }
+        }
+      }
+    },
+    "message_view_user_message_send_button" : {
+      "comment" : "message_view_user_message_send_button",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send"
+          }
+        }
+      }
     },
     "messages_view_toolbar_contacts" : {
       "comment" : "messages_view_toolbar_contacts",
@@ -140,7 +171,14 @@
       }
     },
     "ok" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ok"
+          }
+        }
+      }
     },
     "sign_in_view_button_enter" : {
       "comment" : "sign_in_view_button_enter",
