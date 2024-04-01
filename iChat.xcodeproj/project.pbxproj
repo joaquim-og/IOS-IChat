@@ -26,6 +26,8 @@
 		340D90F72BADD35D002ABF97 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D90F62BADD35D002ABF97 /* ContactsViewModel.swift */; };
 		340D90F92BADD3A6002ABF97 /* ContactsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D90F82BADD3A6002ABF97 /* ContactsInteractor.swift */; };
 		340D90FB2BADD3EA002ABF97 /* ContactsRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D90FA2BADD3EA002ABF97 /* ContactsRemoteDataSource.swift */; };
+		342597692BBB602C0043B8BD /* ChatInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342597682BBB602C0043B8BD /* ChatInteractor.swift */; };
+		3425976B2BBB606A0043B8BD /* ChatRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3425976A2BBB606A0043B8BD /* ChatRemoteDataSource.swift */; };
 		3435E9FE2BB5F65300739CB4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3435E9FD2BB5F65300739CB4 /* Message.swift */; };
 		3435EA002BB5F6A300739CB4 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3435E9FF2BB5F6A300739CB4 /* ChatViewModel.swift */; };
 		3435EA022BB5F6D300739CB4 /* ChatUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3435EA012BB5F6D300739CB4 /* ChatUiState.swift */; };
@@ -73,6 +75,8 @@
 		340D90F62BADD35D002ABF97 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
 		340D90F82BADD3A6002ABF97 /* ContactsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsInteractor.swift; sourceTree = "<group>"; };
 		340D90FA2BADD3EA002ABF97 /* ContactsRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsRemoteDataSource.swift; sourceTree = "<group>"; };
+		342597682BBB602C0043B8BD /* ChatInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInteractor.swift; sourceTree = "<group>"; };
+		3425976A2BBB606A0043B8BD /* ChatRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRemoteDataSource.swift; sourceTree = "<group>"; };
 		3435E9FD2BB5F65300739CB4 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		3435E9FF2BB5F6A300739CB4 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		3435EA012BB5F6D300739CB4 /* ChatUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUiState.swift; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 				340D90C92BACBA37002ABF97 /* SignUpRemoteDataSource.swift */,
 				340D90ED2BADD204002ABF97 /* MessagesRemoteDatasource.swift */,
 				340D90FA2BADD3EA002ABF97 /* ContactsRemoteDataSource.swift */,
+				3425976A2BBB606A0043B8BD /* ChatRemoteDataSource.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 		3435E9F92BB5F62500739CB4 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				342597682BBB602C0043B8BD /* ChatInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -613,6 +619,7 @@
 				34DA07362BA489AF00FC45C2 /* IChatSecureEditTextView.swift in Sources */,
 				340D90E42BADABF2002ABF97 /* MessagesView.swift in Sources */,
 				340D90C52BACB961002ABF97 /* SignInRemoteDataSource.swift in Sources */,
+				342597692BBB602C0043B8BD /* ChatInteractor.swift in Sources */,
 				340D90F52BADD2DF002ABF97 /* ContactsView.swift in Sources */,
 				34DA07442BA4981500FC45C2 /* SignUpViewModel.swift in Sources */,
 				3435EA022BB5F6D300739CB4 /* ChatUiState.swift in Sources */,
@@ -639,6 +646,7 @@
 				34DA07302BA484C700FC45C2 /* IChatLogo.swift in Sources */,
 				34DA07382BA48B4E00FC45C2 /* IChatLoadingButtonView.swift in Sources */,
 				340D90D22BACC0B7002ABF97 /* SignUpInteractor.swift in Sources */,
+				3425976B2BBB606A0043B8BD /* ChatRemoteDataSource.swift in Sources */,
 				34DA073D2BA492B200FC45C2 /* SignInViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

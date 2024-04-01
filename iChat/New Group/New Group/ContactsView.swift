@@ -21,7 +21,10 @@ struct ContactsView: View {
             
             List(viewModel.contacts, id: \.self) { contact in
                 NavigationLink {
-                    ChatView(userName: contact.name)
+                    ChatView(
+                        toId: contact.uuid,
+                        userName: contact.name
+                    )
                 } label: {
                     ContactRow(contact: contact)
                 }

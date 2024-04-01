@@ -40,6 +40,18 @@
         }
       }
     },
+    "generic_conversations_identifier" : {
+      "comment" : "generic_conversations_identifier",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "conversations"
+          }
+        }
+      }
+    },
     "generic_email_error_message" : {
       "comment" : "generic_email_error_message",
       "extractionState" : "manual",

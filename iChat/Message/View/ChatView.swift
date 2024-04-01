@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ChatView: View {
     
+    let toId: String
     let userName: String
+    
     @StateObject var viewModel = ChatViewModel()
     
     var body: some View {
@@ -33,7 +35,9 @@ extension ChatView {
         )
         .navigationTitle(userName)
         .navigationBarTitleDisplayMode(.inline)
-        
+        .onAppear{
+            viewModel.onAppear(toId: toId)
+        }
     }
 }
 
@@ -61,7 +65,7 @@ extension ChatView {
             )
             
             Button {
-                //TODO
+                viewModel.sendMessage(toId: toId)
             } label: {
                 Text(
                     NSLocalizedString(
@@ -84,7 +88,10 @@ extension ChatView {
 struct ChatViewPreviews: PreviewProvider {
     static var previews: some View {
         ForEach(ColorScheme.allCases, id: \.self) { colorScheme in
-            ChatView(userName: "Xablau")
+            ChatView(
+                toId: UUID().uuidString,
+                userName: "Xablau"
+            )
                 .preferredColorScheme(colorScheme)
         }
     }
