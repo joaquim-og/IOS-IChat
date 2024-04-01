@@ -13,13 +13,28 @@ struct MessagesView: View {
     
     private let contactsString = NSLocalizedString("messages_view_toolbar_contacts", comment: "")
     private let logoutString = NSLocalizedString("messages_view_toolbar_logout", comment: "")
+    private let messagesTitle = NSLocalizedString("messages_view_messages", comment: "")
     
     var body: some View {
         
         NavigationView {
             VStack {
-                Text("Xablau marcação")
+                if (viewModel.uiState == MessagesUiState.loading){
+                    ProgressView()
+                }
+                
+                List (viewModel.contacts, id: \.self) { contact in
+                    NavigationLink {
+                        ChatView(contact: contact)
+                    } label: {
+                        ContactMessageRow(contact: contact)
+                    }
+                }
+                
+            }.onAppear{
+                viewModel.getContacts()
             }
+            .navigationTitle(messagesTitle)
             .toolbar{
                 ToolbarItem(
                     id: contactsString,

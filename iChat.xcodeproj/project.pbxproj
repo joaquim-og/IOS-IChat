@@ -33,6 +33,7 @@
 		3435EA022BB5F6D300739CB4 /* ChatUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3435EA012BB5F6D300739CB4 /* ChatUiState.swift */; };
 		3435EA042BB5FB6900739CB4 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3435EA032BB5FB6900739CB4 /* ChatView.swift */; };
 		3435EA062BB5FD9B00739CB4 /* MessageViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3435EA052BB5FD9B00739CB4 /* MessageViewRow.swift */; };
+		347CFC812BBB6EE400DBF7B4 /* ContactMessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347CFC802BBB6EE400DBF7B4 /* ContactMessageRow.swift */; };
 		3482FF602BADD5EA002143C7 /* ContactsUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3482FF5F2BADD5EA002143C7 /* ContactsUiState.swift */; };
 		3482FF622BADD6A6002143C7 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3482FF612BADD6A6002143C7 /* Contact.swift */; };
 		34CAE8042BA4D5CC006D57BF /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CAE8032BA4D5CC006D57BF /* StringExtensions.swift */; };
@@ -82,6 +83,7 @@
 		3435EA012BB5F6D300739CB4 /* ChatUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUiState.swift; sourceTree = "<group>"; };
 		3435EA032BB5FB6900739CB4 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		3435EA052BB5FD9B00739CB4 /* MessageViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewRow.swift; sourceTree = "<group>"; };
+		347CFC802BBB6EE400DBF7B4 /* ContactMessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMessageRow.swift; sourceTree = "<group>"; };
 		3482FF5F2BADD5EA002143C7 /* ContactsUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsUiState.swift; sourceTree = "<group>"; };
 		3482FF612BADD6A6002143C7 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		34CAE8032BA4D5CC006D57BF /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				340D90E32BADABF2002ABF97 /* MessagesView.swift */,
+				347CFC802BBB6EE400DBF7B4 /* ContactMessageRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -280,7 +283,7 @@
 			name = Interactor;
 			sourceTree = "<group>";
 		};
-		3435E9F82BB5F61600739CB4 /* Message */ = {
+		3435E9F82BB5F61600739CB4 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
 				3435E9FC2BB5F64600739CB4 /* View */,
@@ -288,7 +291,7 @@
 				3435E9FA2BB5F63000739CB4 /* Model */,
 				3435E9F92BB5F62500739CB4 /* Interactor */,
 			);
-			path = Message;
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		3435E9F92BB5F62500739CB4 /* Interactor */ = {
@@ -451,7 +454,7 @@
 		9C0B9A3E270F691D00DF2B5F /* iChat */ = {
 			isa = PBXGroup;
 			children = (
-				3435E9F82BB5F61600739CB4 /* Message */,
+				3435E9F82BB5F61600739CB4 /* Chat */,
 				340D90EF2BADD290002ABF97 /* Contacts */,
 				340D90E02BACD11C002ABF97 /* Messages */,
 				340D90D72BACCCC4002ABF97 /* SplashView */,
@@ -642,6 +645,7 @@
 				3482FF602BADD5EA002143C7 /* ContactsUiState.swift in Sources */,
 				340D90F92BADD3A6002ABF97 /* ContactsInteractor.swift in Sources */,
 				340D90CA2BACBA37002ABF97 /* SignUpRemoteDataSource.swift in Sources */,
+				347CFC812BBB6EE400DBF7B4 /* ContactMessageRow.swift in Sources */,
 				34DA07412BA497BC00FC45C2 /* SignUpView.swift in Sources */,
 				34DA07302BA484C700FC45C2 /* IChatLogo.swift in Sources */,
 				34DA07382BA48B4E00FC45C2 /* IChatLoadingButtonView.swift in Sources */,

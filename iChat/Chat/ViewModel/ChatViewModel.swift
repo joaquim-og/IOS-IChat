@@ -13,20 +13,39 @@ class ChatViewModel:  ObservableObject {
     private let chatInteractor = ChatInteractor()
     private var sendChatTextCancellable: AnyCancellable?
     private var getChatTextCancellable: AnyCancellable?
+    private var getMySelfCancellable: AnyCancellable?
 
     @Published var uiState: ChatUiState = .none
     @Published var messages: [Message] = []
     @Published var text: String = ""
     
+    var myPhoto = ""
+    var myName = ""
     
     deinit {
         sendChatTextCancellable?.cancel()
         getChatTextCancellable?.cancel()
+        getMySelfCancellable?.cancel()
     }
     
-    func onAppear(toId: String) {
+    func onAppear(contact: Contact) {
         setLoadingState()
-        getChatTextCancellable = chatInteractor.getMessages(toId: toId)
+        getMySelfCancellable = chatInteractor.getMySelf()
+            .receive(on: DispatchQueue.main)
+            .sink { onComplete in
+                switch (onComplete) {
+                case .failure(let appError):
+                    self.setErrorState(error: appError.message)
+                    break
+                case .finished:
+                    break
+                }
+            } receiveValue: { user in
+                self.myPhoto = user.profileUrl
+                self.myName = user.name
+            }
+        
+        getChatTextCancellable = chatInteractor.getMessages(toId: contact.uuid)
             .receive(on: DispatchQueue.main)
             .sink { onComplete in
                 switch (onComplete) {
@@ -42,9 +61,14 @@ class ChatViewModel:  ObservableObject {
             }
     }
     
-    func sendMessage(toId: String) {
+    func sendMessage(contact: Contact) {
         setLoadingState()
-        sendChatTextCancellable = chatInteractor.sendMessage(toId: toId, textToSend: text)
+        sendChatTextCancellable = chatInteractor.sendMessage(
+            contact: contact,
+            textToSend: text,
+            myName: myName,
+            myPhoto: myPhoto
+        )
             .receive(on: DispatchQueue.main)
             .sink { onComplete in
                 switch (onComplete) {
@@ -55,7 +79,7 @@ class ChatViewModel:  ObservableObject {
                     break
                 }
             } receiveValue: { _ in
-                self.onAppear(toId: toId)
+                self.onAppear(contact: contact)
             }
     }
     

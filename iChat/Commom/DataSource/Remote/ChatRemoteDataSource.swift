@@ -15,6 +15,8 @@ class ChatRemoteDataSource {
     
     private let genericServerErrorMessage = NSLocalizedString("generic_server_error", comment: "")
     private let conversationsIdentifier = NSLocalizedString("generic_conversations_identifier", comment: "")
+    private let lastMessagesIdentifier = NSLocalizedString("generic_last_messages_identifier", comment: "")
+    private let contactsIdentifier = NSLocalizedString("generic_contacts_identifier", comment: "")
     
     func getMessages(toId: String) -> Future<[Message], AppError> {
         return Future { promise in
@@ -54,18 +56,18 @@ class ChatRemoteDataSource {
         }
     }
     
-    func sendMessage(toId: String, textToSend: String) -> Future<Void, AppError> {
+    func sendMessage(contact: Contact, textToSend: String, myName: String, myPhoto: String) -> Future<Void, AppError> {
         return Future { promise in
             let fromId = Auth.auth().currentUser!.uid
             let timeStamp = Date().timeIntervalSince1970
             
             Firestore.firestore().collection(self.conversationsIdentifier)
                 .document(fromId)
-                .collection(toId)
+                .collection(contact.uuid)
                 .addDocument(data: [
                     "text": textToSend,
                     "fromId": fromId,
-                    "toId": toId,
+                    "toId": contact.uuid,
                     "timeStamp": UInt(timeStamp)
                 ]) { error in
                     if let errorMessage = error {
@@ -74,13 +76,30 @@ class ChatRemoteDataSource {
                     }
                 }
             
+            Firestore.firestore().collection(self.lastMessagesIdentifier)
+                .document(fromId)
+                .collection(self.contactsIdentifier)
+                .document(contact.uuid)
+                .setData([
+                    "uid": contact.uuid,
+                    "username": contact.name,
+                    "photoUrl": contact.profileUrl,
+                    "timeStamp": UInt(timeStamp),
+                    "lastMessage": textToSend
+                ]) { error in
+                    if let errorMessage = error {
+                        promise(.failure(AppError.response(message: errorMessage.localizedDescription)))
+                        return
+                    }
+                }
+            
             Firestore.firestore().collection(self.conversationsIdentifier)
-                .document(toId)
+                .document(contact.uuid)
                 .collection(fromId)
                 .addDocument(data: [
                     "text": textToSend,
                     "fromId": fromId,
-                    "toId": toId,
+                    "toId": contact.uuid,
                     "timeStamp": UInt(timeStamp)
                 ]) { error in
                     if let errorMessage = error {
@@ -88,6 +107,24 @@ class ChatRemoteDataSource {
                         return
                     }
                 }
+            
+            Firestore.firestore().collection(self.lastMessagesIdentifier)
+                .document(contact.uuid)
+                .collection(self.contactsIdentifier)
+                .document(fromId)
+                .setData([
+                    "uid": fromId,
+                    "username": myName,
+                    "photoUrl": myPhoto,
+                    "timeStamp": UInt(timeStamp),
+                    "lastMessage": textToSend
+                ]) { error in
+                    if let errorMessage = error {
+                        promise(.failure(AppError.response(message: errorMessage.localizedDescription)))
+                        return
+                    }
+                }
+            
             
             promise(.success(Void()))
             

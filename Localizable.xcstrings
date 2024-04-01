@@ -40,6 +40,18 @@
         }
       }
     },
+    "generic_contacts_identifier" : {
+      "comment" : "generic_contacts_identifier",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "contacts"
+          }
+        }
+      }
+    },
     "generic_conversations_identifier" : {
       "comment" : "generic_conversations_identifier",
       "extractionState" : "manual",
@@ -72,6 +84,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Insert your E-mail"
+          }
+        }
+      }
+    },
+    "generic_last_messages_identifier" : {
+      "comment" : "generic_last_messages_identifier",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "last_messages"
           }
         }
       }
@@ -124,6 +148,18 @@
         }
       }
     },
+    "generic_users_identifier" : {
+      "comment" : "generic_users_identifier",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "users"
+          }
+        }
+      }
+    },
     "Habit" : {
       "localizations" : {
         "en" : {
@@ -154,6 +190,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Send"
+          }
+        }
+      }
+    },
+    "messages_view_messages" : {
+      "comment" : "messages_view_messages",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Messages"
           }
         }
       }
@@ -262,9 +310,6 @@
           }
         }
       }
-    },
-    "Xablau marcação" : {
-
     }
   },
   "version" : "1.0"

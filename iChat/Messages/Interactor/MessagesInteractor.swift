@@ -15,10 +15,8 @@ class MessagesInteractor {
 
 extension MessagesInteractor {
     
-//    func signUp(
-//        request: SignUpRequest
-//    ) -> Future<User, AppError> {
-//        return remoteDataSource.signUp(request: request)
-//    }
+    func getContacts() -> Future<[Contact], AppError> {
+        return remoteDataSource.getContacts()
+    }
     
 }

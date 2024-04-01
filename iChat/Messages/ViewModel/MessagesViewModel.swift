@@ -13,38 +13,36 @@ class MessagesViewModel:  ObservableObject {
     
     
     private let messagesInteractor = MessagesInteractor()
-    private var requestMessagesCancellable: AnyCancellable?
+    private var getMessagesCancellable: AnyCancellable?
 
     @Published var uiState: MessagesUiState = .none
+    @Published var contacts: [Contact] = []
     
     deinit {
-        requestMessagesCancellable?.cancel()
+        getMessagesCancellable?.cancel()
     }
     
     func doLogout() {
         try? Auth.auth().signOut()
     }
     
-    func checkIfuserIsLogged() {
+    func getContacts() {
         setLoadingState()
         
-//        requestUserLoggedCancellable = signInRemoteDataSource.getCurrentUser()
-//        .receive(on: DispatchQueue.main)
-//        .sink { onComplete in
-//            switch (onComplete) {
-//            case .failure(let appError):
-//                self.setErrorState(error: appError.message)
-//                break
-//            case .finished:
-//                break
-//            }
-//        } receiveValue: { user in
-//            if (user != nil) {
-//                self.setUserStateState(userState: .logged)
-//            } else {
-//                self.setUserStateState(userState: .unLogged)
-//            }
-//        }
+        getMessagesCancellable = messagesInteractor.getContacts()
+        .receive(on: DispatchQueue.main)
+        .sink { onComplete in
+            switch (onComplete) {
+            case .failure(let appError):
+                self.setErrorState(error: appError.message)
+                break
+            case .finished:
+                break
+            }
+        } receiveValue: { contacts in
+            self.contacts = contacts
+            self.seMessagestateState(messagesState: .success)
+        }
     }
     
     private func setLoadingState() {
@@ -53,9 +51,9 @@ class MessagesViewModel:  ObservableObject {
         }
     }
     
-    private func setUserStateState(userState: MessagesUiState) {
+    private func seMessagestateState(messagesState: MessagesUiState) {
         DispatchQueue.main.async {
-            self.uiState = userState
+            self.uiState = messagesState
         }
     }
     
