@@ -56,6 +56,9 @@ extension ChatView {
                 .frame(height: 1)
                 .id(bottomID)
         }
+        .gesture(DragGesture().onChanged({ _ in
+            UIApplication.shared.endEditing()
+        }))
     }
     
     private func scrollToLastMessage(_ value: ScrollViewProxy) {
@@ -83,7 +86,7 @@ extension ChatView {
                             )
                     )
                     .frame(
-                        maxHeight: (textSize.height + 50) > 100 ? 100 : textSize.height + 50
+                        maxHeight: (textSize.height + 50) > 100 ? 100 : textSize.height + 38
                     )
                 
                 Text(viewModel.text)
@@ -107,7 +110,8 @@ extension ChatView {
                         comment: ""
                     )
                 )
-                .padding()
+                .padding(.horizontal, 20)
+                .padding(.vertical, 8)
                 .background(Color("GreenColor"))
                 .foregroundColor(Color.white)
                 .cornerRadius(24.0)

@@ -20,7 +20,11 @@ struct MessageViewRow: View {
                     .lineLimit(nil)
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.horizontal, 10)
-                    .background(Color(white: 0.95))
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(message.isMe ? Color("GreenLightColor") : Color(white: 0.95))
+                    )
+                    .padding(.horizontal, 2)
                     .frame(maxWidth: 260, alignment: message.isMe ? .trailing : .leading)
             }
         ).frame(maxWidth: .infinity, alignment: message.isMe ? .trailing : .leading)

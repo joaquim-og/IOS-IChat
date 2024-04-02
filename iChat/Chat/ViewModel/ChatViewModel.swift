@@ -65,7 +65,7 @@ class ChatViewModel:  ObservableObject {
         setLoadingState()
         sendChatTextCancellable = chatInteractor.sendMessage(
             contact: contact,
-            textToSend: text,
+            textToSend: text.trimmingCharacters(in: .whitespacesAndNewlines),
             myName: myName,
             myPhoto: myPhoto
         )
