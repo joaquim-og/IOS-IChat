@@ -13,6 +13,8 @@ struct ChatView: View {
     
     @StateObject var viewModel = ChatViewModel()
     
+    @State var textSize: CGSize = .zero
+    
     var body: some View {
         VStack {
             chatView
@@ -43,25 +45,35 @@ extension ChatView {
 extension ChatView {
     var userInputs: some View {
         HStack{
-            TextField(
-                NSLocalizedString(
-                    "message_view_user_message",
-                    comment: ""
-                ),
-                text: $viewModel.text
-            )
-            .autocapitalization(.none)
-            .disableAutocorrection(true)
-            .padding()
-            .background(Color.white)
-            .cornerRadius(24.0)
-            .overlay(
-                RoundedRectangle(cornerRadius: 24.0)
-                    .strokeBorder(
-                        Color(UIColor.separator),
-                        style: StrokeStyle(lineWidth: 1.0)
+            ZStack {
+                TextEditor(text: $viewModel.text)
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
+                    .padding()
+                    .background(Color.white)
+                    .cornerRadius(24.0)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 24.0)
+                            .strokeBorder(
+                                Color(UIColor.separator),
+                                style: StrokeStyle(lineWidth: 1.0)
+                            )
                     )
-            )
+                    .frame(
+                        maxHeight: (textSize.height + 50) > 100 ? 100 : textSize.height + 50
+                    )
+                
+                Text(viewModel.text)
+                    .opacity(0.0)
+                    .lineLimit(4)
+                    .multilineTextAlignment(.leading)
+                    .padding(.horizontal, 21)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(ViewGeometry())
+                    .onPreferenceChange(ViewSizeKey.self) {size in
+                            textSize = size
+                    }
+            }
             
             Button {
                 viewModel.sendMessage(contact: contact)
@@ -94,7 +106,7 @@ struct ChatViewPreviews: PreviewProvider {
                     profileUrl: "https://static.significados.com.br/foto/hqdefault_sm.jpg"
                 )
             )
-                .preferredColorScheme(colorScheme)
+            .preferredColorScheme(colorScheme)
         }
     }
 }

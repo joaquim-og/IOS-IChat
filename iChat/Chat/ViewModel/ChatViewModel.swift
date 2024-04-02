@@ -79,6 +79,7 @@ class ChatViewModel:  ObservableObject {
                     break
                 }
             } receiveValue: { _ in
+                self.text = ""
                 self.onAppear(contact: contact)
             }
     }

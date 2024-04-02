@@ -34,8 +34,10 @@
 		3435EA042BB5FB6900739CB4 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3435EA032BB5FB6900739CB4 /* ChatView.swift */; };
 		3435EA062BB5FD9B00739CB4 /* MessageViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3435EA052BB5FD9B00739CB4 /* MessageViewRow.swift */; };
 		347CFC812BBB6EE400DBF7B4 /* ContactMessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347CFC802BBB6EE400DBF7B4 /* ContactMessageRow.swift */; };
+		347CFC832BBC08B200DBF7B4 /* ViewSizeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347CFC822BBC08B200DBF7B4 /* ViewSizeKey.swift */; };
 		3482FF602BADD5EA002143C7 /* ContactsUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3482FF5F2BADD5EA002143C7 /* ContactsUiState.swift */; };
 		3482FF622BADD6A6002143C7 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3482FF612BADD6A6002143C7 /* Contact.swift */; };
+		34A68D1B2BBC09910017853E /* ViewGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A68D1A2BBC09910017853E /* ViewGeometry.swift */; };
 		34CAE8042BA4D5CC006D57BF /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CAE8032BA4D5CC006D57BF /* StringExtensions.swift */; };
 		34CAE8072BA4D65F006D57BF /* SignUpUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CAE8062BA4D65F006D57BF /* SignUpUiState.swift */; };
 		34CAE8092BA4D750006D57BF /* IChatErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CAE8082BA4D750006D57BF /* IChatErrorAlert.swift */; };
@@ -84,8 +86,10 @@
 		3435EA032BB5FB6900739CB4 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		3435EA052BB5FD9B00739CB4 /* MessageViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewRow.swift; sourceTree = "<group>"; };
 		347CFC802BBB6EE400DBF7B4 /* ContactMessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMessageRow.swift; sourceTree = "<group>"; };
+		347CFC822BBC08B200DBF7B4 /* ViewSizeKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSizeKey.swift; sourceTree = "<group>"; };
 		3482FF5F2BADD5EA002143C7 /* ContactsUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsUiState.swift; sourceTree = "<group>"; };
 		3482FF612BADD6A6002143C7 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		34A68D1A2BBC09910017853E /* ViewGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewGeometry.swift; sourceTree = "<group>"; };
 		34CAE8032BA4D5CC006D57BF /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		34CAE8062BA4D65F006D57BF /* SignUpUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUiState.swift; sourceTree = "<group>"; };
 		34CAE8082BA4D750006D57BF /* IChatErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IChatErrorAlert.swift; sourceTree = "<group>"; };
@@ -374,6 +378,8 @@
 				34DA07372BA48B4E00FC45C2 /* IChatLoadingButtonView.swift */,
 				34CAE8082BA4D750006D57BF /* IChatErrorAlert.swift */,
 				34CAE80D2BA4DD81006D57BF /* ImagePickerView.swift */,
+				347CFC822BBC08B200DBF7B4 /* ViewSizeKey.swift */,
+				34A68D1A2BBC09910017853E /* ViewGeometry.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -624,6 +630,7 @@
 				340D90C52BACB961002ABF97 /* SignInRemoteDataSource.swift in Sources */,
 				342597692BBB602C0043B8BD /* ChatInteractor.swift in Sources */,
 				340D90F52BADD2DF002ABF97 /* ContactsView.swift in Sources */,
+				347CFC832BBC08B200DBF7B4 /* ViewSizeKey.swift in Sources */,
 				34DA07442BA4981500FC45C2 /* SignUpViewModel.swift in Sources */,
 				3435EA022BB5F6D300739CB4 /* ChatUiState.swift in Sources */,
 				34CAE80C2BA4D8FA006D57BF /* SignInUiState.swift in Sources */,
@@ -635,6 +642,7 @@
 				34CAE8092BA4D750006D57BF /* IChatErrorAlert.swift in Sources */,
 				340D90DE2BACCE1D002ABF97 /* ContentViewUiState.swift in Sources */,
 				3435E9FE2BB5F65300739CB4 /* Message.swift in Sources */,
+				34A68D1B2BBC09910017853E /* ViewGeometry.swift in Sources */,
 				340D90D42BACC789002ABF97 /* SignInRequest.swift in Sources */,
 				340D90EC2BADD1D1002ABF97 /* MessagesInteractor.swift in Sources */,
 				340D90E62BADAC38002ABF97 /* MessagesViewModel.swift in Sources */,
