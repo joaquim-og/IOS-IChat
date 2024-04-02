@@ -21,8 +21,8 @@ struct MessageViewRow: View {
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.horizontal, 10)
                     .background(Color(white: 0.95))
-                    .frame(maxWidth: 260, alignment: message.isMe ? .leading : .trailing)
+                    .frame(maxWidth: 260, alignment: message.isMe ? .trailing : .leading)
             }
-        ).frame(maxWidth: .infinity, alignment: message.isMe ? .leading : .trailing)
+        ).frame(maxWidth: .infinity, alignment: message.isMe ? .trailing : .leading)
     }
 }
