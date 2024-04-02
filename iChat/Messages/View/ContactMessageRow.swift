@@ -28,6 +28,7 @@ struct ContactMessageRow: View {
                     
                     if let msg = contact.lastMessage {
                         Text(msg)
+                            .lineLimit(1)
                     }
                 }
             )

@@ -15,6 +15,8 @@ struct ChatView: View {
     
     @State var textSize: CGSize = .zero
     
+    @Namespace var bottomID
+    
     var body: some View {
         VStack {
             chatView
@@ -26,18 +28,39 @@ struct ChatView: View {
 
 extension ChatView {
     var chatView: some View {
-        ScrollView(
-            showsIndicators: false,
-            content: {
-                ForEach(viewModel.messages, id: \.self) { message in
-                    MessageViewRow(message: message)
+        ScrollViewReader { value in
+            ScrollView(
+                showsIndicators: false,
+                content: {
+                    VStack(spacing: 10) {
+                        ForEach(viewModel.messages.indices, id: \.self) { index in
+                            MessageViewRow(message: viewModel.messages[index])
+                                .id(index)
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 80)
                 }
+            )
+            .navigationTitle(contact.name)
+            .navigationBarTitleDisplayMode(.inline)
+            .onAppear {
+                viewModel.onAppear(contact: contact)
+                scrollToLastMessage(value)
             }
-        )
-        .navigationTitle(contact.name)
-        .navigationBarTitleDisplayMode(.inline)
-        .onAppear{
-            viewModel.onAppear(contact: contact)
+            .onChange(of: viewModel.messages.count) { _ in
+                scrollToLastMessage(value)
+            }
+            
+            Color.clear
+                .frame(height: 1)
+                .id(bottomID)
+        }
+    }
+    
+    private func scrollToLastMessage(_ value: ScrollViewProxy) {
+        withAnimation {
+            value.scrollTo(viewModel.messages.count - 1)
         }
     }
 }
@@ -71,7 +94,7 @@ extension ChatView {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .background(ViewGeometry())
                     .onPreferenceChange(ViewSizeKey.self) {size in
-                            textSize = size
+                        textSize = size
                     }
             }
             
