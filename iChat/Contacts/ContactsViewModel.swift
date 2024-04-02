@@ -1,35 +1,31 @@
 //
-//  MessagesViewModel.swift
+//  ContactsViewModel.swift
 //  iChat
 //
 //  Created by joaquim de oliveira gomes on 22/03/24.
 //
 
 import Foundation
-import FirebaseAuth
 import Combine
 
-class MessagesViewModel:  ObservableObject {
+class ContactsViewModel:  ObservableObject {
     
     
-    private let messagesInteractor = MessagesInteractor()
-    private var getMessagesCancellable: AnyCancellable?
+    private let contactsInteractor = ContactsInteractor()
+    private var requestContactsCancellable: AnyCancellable?
 
-    @Published var uiState: MessagesUiState = .none
+    @Published var uiState: ContactsUiState = .none
     @Published var contacts: [Contact] = []
     
     deinit {
-        getMessagesCancellable?.cancel()
+        requestContactsCancellable?.cancel()
     }
     
-    func doLogout() {
-        try? Auth.auth().signOut()
-    }
     
     func getContacts() {
         setLoadingState()
         
-        getMessagesCancellable = messagesInteractor.getContacts()
+        requestContactsCancellable = contactsInteractor.getContacts()
         .receive(on: DispatchQueue.main)
         .sink { onComplete in
             switch (onComplete) {
@@ -39,9 +35,9 @@ class MessagesViewModel:  ObservableObject {
             case .finished:
                 break
             }
-        } receiveValue: { contacts in
-            self.contacts = contacts
-            self.seMessagestateState(messagesState: .success)
+        } receiveValue: { contactsList in
+            self.setContactState(newState: .success)
+            self.contacts = contactsList
         }
     }
     
@@ -51,9 +47,9 @@ class MessagesViewModel:  ObservableObject {
         }
     }
     
-    private func seMessagestateState(messagesState: MessagesUiState) {
+    private func setContactState(newState: ContactsUiState) {
         DispatchQueue.main.async {
-            self.uiState = messagesState
+            self.uiState = newState
         }
     }
     

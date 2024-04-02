@@ -79,12 +79,13 @@ class SignUpRemoteDataSource {
         photoUrl: URL
     ) -> Future<Bool, AppError> {
         return Future { promise in
+            let userId = Auth.auth().currentUser!.uid
             Firestore.firestore()
                 .collection(NSLocalizedString("firedtore_db_references_user", comment: ""))
-                .document()
+                .document(userId)
                 .setData([
                     "name": userName,
-                    "uuid": Auth.auth().currentUser!.uid,
+                    "uuid": userId,
                     "profileUrl": photoUrl.absoluteString
                 ]) { error in
                     if (error != nil) {
